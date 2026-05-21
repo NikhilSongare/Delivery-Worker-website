@@ -19,6 +19,13 @@ const clientUrl = process.env.CLIENT_URL || 'http://localhost:5173';
 
 const app = express();
 
+app.get("/api/test", (req, res) => {
+  res.json({
+    success: true,
+    message: "Backend Connected Successfully"
+  });
+});
+
 app.post(
   '/api/payments/webhook',
   express.raw({ type: 'application/json' }),
