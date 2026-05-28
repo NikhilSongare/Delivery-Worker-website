@@ -19,6 +19,12 @@ const clientUrl = process.env.CLIENT_URL || 'http://localhost:5173';
 
 const app = express();
 
+app.get('/', (req, res) => {
+  res.json({
+    success: true,
+    message: 'Delivery Worker Backend Running Successfully'
+  });
+});
 
 app.get("/api/test", (req, res) => {
   res.json({

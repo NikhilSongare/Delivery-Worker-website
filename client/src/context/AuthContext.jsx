@@ -23,8 +23,7 @@ export function AuthProvider({ children }) {
     }
   }, []);
 
-  useEffect(() => {
-    refreshMe();
+  useEffect(() => {refreshMe();
   }, [refreshMe]);
 
   const login = useCallback(async (payload) => {
