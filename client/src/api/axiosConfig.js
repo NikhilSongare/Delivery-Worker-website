@@ -3,7 +3,8 @@ import axios from 'axios';
 const TOKEN_KEY = 'dw_token';
 
 export function getApiBase() {
-  const env = import.meta.env.REACT_APP_API_URL || import.meta.env.VITE_API_URL;
+  // const env = import.meta.env.REACT_APP_API_URL || import.meta.env.VITE_API_URL;
+  const env = import.meta.env.VITE_API_URL;
   if (env) return String(env).replace(/\/$/, '');
   if (import.meta.env.DEV) return 'http://localhost:5000';
   return '';
@@ -19,8 +20,8 @@ export function setToken(token) {
 }
 
 const api = axios.create({
-  baseURL: `${import.meta.env.VITE_API_URL}/api`,
-  // baseURL: `${getApiBase()}/api`,
+  // baseURL: `${import.meta.env.VITE_API_URL}/api`,
+  baseURL: `${getApiBase()}/api`,
   headers: { 'Content-Type': 'application/json' },
 });
 
